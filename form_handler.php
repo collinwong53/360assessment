@@ -29,10 +29,9 @@ if($_POST){
             $stmt->bind_param('ssss',$name,$email,$phone,$comments);
             $stmt->execute();
             if($conn->affected_rows>0){
-                $success = 'success';
                 include('email_reply.php');
             }else{
-                $success = 'fail';
+                echo 'insert failed';
             }
         }
      } 
